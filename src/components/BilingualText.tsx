@@ -26,11 +26,11 @@ export const BilingualText: React.FC<BilingualTextProps> = ({
     return <span className={`${enClassName} ${className}`}>{ml}</span>; // Use enClassName for main text sizing if only ML is shown
   }
 
-  // Bilingual mode
+  // Bilingual mode – use a span wrapper to avoid block element inside inline text
   return (
-    <div className={className}>
+    <span className={className} style={{ display: 'inline-flex', flexDirection: 'column' }}>
       <span className={enClassName}>{en}</span>
       <span className={mlClassName}>{ml}</span>
-    </div>
+    </span>
   );
 };

@@ -44,7 +44,7 @@ export const AdminLayout: React.FC = () => {
             <Link 
               key={item.path} 
               to={item.path} 
-              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+              className={`nav-item ${location.pathname.startsWith(item.path) ? 'active' : ''}`}
             >
               {item.icon}
               {item.label}

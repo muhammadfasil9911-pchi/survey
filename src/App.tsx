@@ -10,6 +10,7 @@ import { Success } from './pages/Success';
 
 // Admin Pages
 import { Login } from './pages/admin/Login';
+import NotFound from './components/NotFound';
 import { AdminLayout } from './components/AdminLayout';
 import { Dashboard } from './pages/admin/Dashboard';
 import { Responses } from './pages/admin/Responses';
@@ -32,7 +33,7 @@ function App() {
             <Route path="/admin/login" element={<Login />} />
 
             {/* Protected Admin Routes */}
-            <Route path="/admin" element={<AdminLayout />}>
+            <Route path="/admin/*" element={<AdminLayout />}>
               <Route index element={<Dashboard />} />
               <Route path="responses" element={<Responses />} />
               <Route path="analysis" element={<Analysis />} />
@@ -41,7 +42,7 @@ function App() {
             </Route>
 
             {/* Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </LanguageProvider>
       </AuthProvider>
