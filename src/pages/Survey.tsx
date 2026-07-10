@@ -4,7 +4,8 @@ import { supabase } from '../lib/supabase';
 import { BilingualText } from '../components/BilingualText';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { SingleChoice, MultiChoice } from '../components/FormFields';
-import { initialSurveyState, SurveyResponses } from '../types/survey';
+import { initialSurveyState } from '../types/survey';
+import type { SurveyResponses } from '../types/survey';
 import * as Q from '../data/questions';
 
 export const Survey: React.FC = () => {
